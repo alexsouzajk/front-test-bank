@@ -1,0 +1,43 @@
+<h2>Cliente: {{customerId}}</h2>
+
+<div class="home-container">
+    <h3>Transações</h3>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let transactions"> {{transactions.id}} </td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef> Data </th>
+            <td mat-cell *matCellDef="let transactions"> {{transactions.date}} </td>
+        </ng-container>
+    
+        <!-- Idade Column -->
+        <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef> Valor </th>
+            <td mat-cell *matCellDef="let transactions"> R${{transactions.value}} </td>
+        </ng-container>
+    
+        <!-- Email Column -->
+        <ng-container matColumnDef="contaOrigem">
+            <th mat-header-cell *matHeaderCellDef> Conta Origem </th>
+            <td mat-cell *matCellDef="let transactions"><span *ngIf="transactions.accountOrigin != null; else noValue"> {{transactions.accountOrigin}} </span> </td>
+        </ng-container>
+    
+        <!-- Email Column -->
+        <ng-container matColumnDef="contaDestino">
+            <th mat-header-cell *matHeaderCellDef> Conta Destino </th>
+            <td mat-cell *matCellDef="let transactions"> {{transactions.destinationAccount.accountNumber}}</td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <ng-template #noValue>
+        <p class="noValue">___</p>
+    </ng-template>
+</div>
+

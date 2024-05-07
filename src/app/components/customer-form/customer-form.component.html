@@ -1,0 +1,51 @@
+<h2>Cadastro de cliente</h2>
+
+<form (ngSubmit)="submit()" [formGroup]="customerForm" #formDir="ngForm">
+    <div class="form-group">
+        <label for="name"></label>
+        <input type="text" placeholder="Nome Completo" formControlName="name" required>
+        <div *ngIf="name.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="name.errors?.['required']">
+                Nome é obrigatório.
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="age"></label>
+        <input type="text" placeholder="Idade" formControlName="age" required>
+        <div *ngIf="age.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="age.errors?.['required']">
+                Idade é obrigatório.
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email"></label>
+        <input type="text" placeholder="Email" formControlName="email" required>
+        <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="email.errors?.['required']">
+                Email é obrigatório.
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="accountNumber"></label>
+        <input type="number" placeholder="Número da conta" formControlName="accountNumber" required>
+        <div *ngIf="accountNumber.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="accountNumber.errors?.['required']">
+                Número da conta é obrigatório.
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="accountBalance"></label>
+        <input type="number" placeholder="Valor" formControlName="accountBalance" required >
+        <div *ngIf="accountBalance.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="accountBalance.errors?.['required']">
+                Valor é obrigatório.
+            </p>
+        </div>
+    </div>
+
+    <input type="submit" value="{{ btnText}}">
+</form>
