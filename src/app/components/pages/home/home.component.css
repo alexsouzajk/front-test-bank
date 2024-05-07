@@ -14,16 +14,11 @@ table {
     width: 100%;
 }
 
-/* table {
-    font-size: 1.5em;
-    border: 1px solid #777;
-    border-radius: 10px;
-}
-table tr,th,td{
-    border: 1px solid #777;
-    padding: 0.5em;
-} */
-
-h1 a {
+.extrato {
+    font-weight: bold;
     text-decoration: underline;
+}
+
+.extrato:hover {
+    color: #dec129;
 }

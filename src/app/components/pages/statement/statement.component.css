@@ -6,6 +6,12 @@
     flex-direction: column;
 }
 
+
+th {
+    font-weight: bold;
+}
+
+
 .noValue {
     color: crimson;
     margin-bottom: 0;

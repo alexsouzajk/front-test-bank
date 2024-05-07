@@ -16,7 +16,19 @@ a:hover {
     color: #dec129;
 }
 
+
+.table-header {
+    font-weight: bold;
+}
+
 /*FORM*/
+
+.input-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+.input-number {
+    -moz-appearance: textfield;
+  }
 
 form {
     width: 450px;
@@ -42,7 +54,7 @@ form {
 }
 
 input[type="submit"] {
-    background-color: #EFEFEF;
+    background-color: #dec129;;
     border: 2px solid transparent;
     padding: .6em 1em;
     font-weight: bold;
@@ -51,9 +63,6 @@ input[type="submit"] {
     transition: 0.4s;
 }
 
-input[type="submit"]:hover{
-    
-}
 
 .validation-error {
     color: #DC3545;

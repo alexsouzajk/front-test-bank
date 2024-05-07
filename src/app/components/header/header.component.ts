@@ -10,15 +10,15 @@ import { TotalBalanceService } from '../../services/total-balance.service';
 
 export class HeaderComponent implements OnInit{
 
-  public balance: number = 0;
+  public balance: any = 0;
 
   constructor(private balanceService: TotalBalanceService) { }
 
   ngOnInit(): void {
-    this.createHandler();
+    this.updateBalance();
   }
 
-  async createHandler(){
+  async updateBalance(){
 
     this.balanceService.getTotalBalances().subscribe(balance => {
       console.log(balance.totalBalance)
